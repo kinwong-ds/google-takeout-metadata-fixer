@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  jupyter:
+    image: photos-meta
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./google_photos_meta:/app
+    environment:
+      - JUPYTER_ENABLE_LAB=true
+    command: jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root
